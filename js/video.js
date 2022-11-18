@@ -21,29 +21,28 @@ document.querySelector('#pause').addEventListener('click', function() {
 // slow down
 document.querySelector('#slower').addEventListener('click', function() {
     // need to set a range of the speed
-    let playspeed = vid.playspeed;
-    if (playspeed > 0.5 & playspeed <= 2) {
-        playspeed = playspeed / 2;
-    }
-    // elif (playspeed <= 0.5) {
-    //     window.alert("Video is at slowest speed!");
-    //     return false;
-    // }
-    else {
+    // let playspeed = vid.playspeed;
+    if (vid.playbackRate === 0.5) {
         window.alert("Video is at slowest speed!");
-        return false;
+    }
+    else if (vid.playbackRate === 1) {
+        vid.playbackRate = 0.5;
+    }
+    else if (vid.playbackRate === 2) {
+        vid.playbackRate = 1;
     }
 });
 
 // speed up
 document.querySelector('#faster').addEventListener('click', function() {
-    let playspeed = vid.playspeed;
-    if (playspeed >= 2) {
+    if (vid.playbackRate === 2) {
         window.alert("Video is at fastest speed!");
-        return false;
     }
-    else {
-        playspeed = playspeed * 2;
+    else if (vid.playbackRate === 1) {
+        vid.playbackRate = 2;
+    }
+    else if (vid.playbackRate === 0.5) {
+        vid.playbackRate = 1;
     }
 });
 
