@@ -62,6 +62,8 @@ document.querySelector('#mute').addEventListener('click', function() {
     if (vid.muted) {
         document.querySelector('#mute').innerHTML = 'Mute';
         vid.muted = false;
+        document.getElementById('slider').value = 100;
+        document.querySelector('#volume').innerHTML = 100;
     }
     else {
         document.querySelector('#mute').innerHTML = 'Unmute';
