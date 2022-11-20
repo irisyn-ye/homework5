@@ -66,6 +66,8 @@ document.querySelector('#mute').addEventListener('click', function() {
     else {
         document.querySelector('#mute').innerHTML = 'Unmute';
         vid.muted = true;
+        document.getElementById('slider').value = 0;
+        document.querySelector('#volume').innerHTML = 0;
     }
 });
 
